@@ -3304,7 +3304,7 @@ input, select, textarea {
 				position: relative;
 			}
 
-				#wrapper > section > header h1:before, #wrapper > section > header h2:before {
+				#wrapper > section > header h1:before, #wrapper > section > header h2:before { /* tails */
 					background: #43d9b8;
 					content: '';
 					display: block;
@@ -3313,7 +3313,7 @@ input, select, textarea {
 					top: 1rem;
 				}
 
-				#wrapper > section > header h1:after, #wrapper > section > header h2:after {
+				#wrapper > section > header h1:after, #wrapper > section > header h2:after { /*Dots on tails*/
 					background: #43d9b8;
 					border-radius: 0.5rem;
 					content: '';
