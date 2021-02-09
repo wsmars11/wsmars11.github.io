@@ -244,6 +244,9 @@ input, select, textarea {
 	.sidebar {
 		color:#ffffff;
 	}
+	.contact-text {
+		color:#000000;
+	}
 
 	@media screen and (max-width: 736px) {
 
@@ -2887,6 +2890,17 @@ input, select, textarea {
 			position: relative;
 			width: 3rem;
 		}
+
+/* Contact Scroll */
+
+	a.contact {
+		border-bottom: 0;
+		display: inline-block;
+		height: 4rem;
+		position: relative;
+		width: 6em;
+		color: #ffffff;
+	}
 
 /* Gallery */
 
