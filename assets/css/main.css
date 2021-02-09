@@ -2016,6 +2016,32 @@ input, select, textarea {
 
 		}
 
+/* Floating Button */
+		.floating-btn {
+			width: 80px;
+			height: 80px;
+			background: #e6cdb8;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-decoration: none;
+			border-radius: 50%;
+			color: black;
+			font-size: 40px;
+			box-shadow: 2px 2px 5px rgba(0,0,0,0.25);
+			position: fixed;
+			left: 20px;
+			bottom: 20px;
+
+			cursor: pointer;
+			z-index: 1004;
+		}
+
+		.floating-btn:hover{
+			box-shadow: inset 0 0 0 2px #ffffff;
+			color: #ffffff !important;
+		}
+
 /* Form */
 
 	form {
