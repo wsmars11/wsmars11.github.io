@@ -2880,7 +2880,7 @@ input, select, textarea {
 		}
 
 		a.arrow:before {
-			background-image: url("../../images/down_arrow3.png");
+			background-image: url("../../images/down_arrow.png");
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: contain;
@@ -2890,6 +2890,32 @@ input, select, textarea {
 			position: relative;
 			width: 3rem;
 		}
+
+/* Uparrow */
+	a.uparrow {
+		border-bottom: 0;
+		display: inline-block;
+		height: 4rem;
+		position: relative;
+		width: 6rem;
+	}
+
+	a.uparrow .label {
+		display: none;
+	}
+
+	a.uparrow:before {
+		background-image: url("../../images/up_arrow.png");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		content: '';
+		display: inline-block;
+		height: 100%;
+		position: relative;
+		width: 3rem;
+	}
+
 
 /* Contact Scroll */
 
