@@ -1,0 +1,266 @@
+---
+import '../styles/global.css';
+
+const NAME = "William Marshall";
+const TITLE = "Finance & Strategy, MBA";
+const TAGLINE = "I build the model — and I understand the data pipeline behind it.";
+
+const ledgerLines = [
+  { label: "Years as a software engineer", value: 4 },
+  { label: "MBA, concentration in Corporate Finance", value: "2026" },
+  { label: "Financial models built from raw, messy data", value: 12 },
+  { label: "Languages: SQL, Java, C++, spreadsheets that don't break", value: 3 },
+];
+
+const experience = [
+  {
+    period: "Nov 2021 — Present",
+    role: "Software Engineer I",
+    org: "DISH Network",
+    detail: "Started in DevOps, building internal tooling to speed up software deployment to set-top boxes and a visual memory-leak tracker for the fleet. Moved onto the Input Manager team, building an Android system app from scratch to handle remote-control input on Android-based set-top boxes, working closely with the hardware team through firmware updates. Most reported issues land on this team by default — the real job is tracing each one back to its actual source rather than stopping at the first plausible explanation.",
+  },
+  {
+    period: "June 2024 — May 2026",
+    role: "MBA Graduate",
+    org: "University of Colorado Boulder, Leeds School of Business",
+    detail: "Coursework spanning financial accounting, corporate finance, applied financial management, and advanced data analytics, alongside strategy, operations management, and managerial economics. Capstone project applying this toolkit to a real business problem.",
+  },
+  {
+    period: "Earlier",
+    role: "Project Manager, Custom Fabricator",
+    org: "Blue Genie Art Industries",
+    detail: "Large scale custom art sculpture fabricator making projects for museums, businesses, festivals, international malls and much more. Participated in every step of the process including client intake, design, CNC milling, fabrication, paint and installation. Managed projects and budgets to deliver successful pieces for our customers.",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{NAME} — {TITLE}</title>
+    <meta name="description" content={TAGLINE} />
+  </head>
+  <body>
+    <!-- Nav -->
+    <header class="nav">
+      <div class="container nav-inner">
+        <span class="nav-mark tabular">01</span>
+        <nav class="nav-links">
+          <a href="#pivot">Why Finance</a>
+          <a href="#experience">Experience</a>
+          <a href="/projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Statement of Purpose</p>
+        <h1 class="hero-name" data-reveal>{NAME}</h1>
+        <p class="hero-title" data-reveal>{TITLE}</p>
+        <p class="hero-tagline" data-reveal>{TAGLINE}</p>
+      </div>
+    </section>
+
+    <!-- Ledger signature element -->
+    <section class="ledger" aria-label="Quick figures">
+      <div class="container">
+        <div class="ledger-table">
+          {ledgerLines.map((line) => (
+            <div class="ledger-row">
+              <span class="ledger-label">{line.label}</span>
+              <span class="ledger-value tabular" data-target={line.value}>—</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Finance -->
+    <section class="pivot" id="pivot">
+      <div class="container pivot-grid">
+        <div class="pivot-heading">
+          <p class="eyebrow">Why Finance</p>
+          <h2>The pivot, in plain terms.</h2>
+        </div>
+        <div class="pivot-body">
+          <p>
+            Before I was an engineer, I watched a fabrication shop I worked for slowly run out of
+            money and close. Nobody was reckless — the work was good, the orders kept coming — but
+            the business side never quite added up, and eventually that caught up with everyone in
+            the building. I didn't have the vocabulary for it then, but I knew I wanted to be the
+            kind of person who could see that coming, and do something about it.
+          </p>
+          <p>
+            I spent the years since as a software engineer on a team that builds the system
+            handling remote-control input on set-top boxes. Almost every issue that hits our queue
+            looks like a remote problem — that's just where users notice it first. Most of them
+            aren't. The actual job is tracing each one back through the stack until you find
+            where it really started, instead of stopping at the first plausible explanation.
+          </p>
+          <p>
+            That's the instinct I'm bringing into finance. An MBA gave me the formal language for
+            it — corporate finance, financial accounting, applied financial management — but the
+            habit of not trusting the first number that looks like the answer, and tracing it back
+            until it's actually true, is one I built long before business school. I want to be in
+            the room making the calls that keep a company healthy, not learning the hard way, after
+            the fact, what happens when no one is.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="experience" id="experience">
+      <div class="container">
+        <p class="eyebrow">Record</p>
+        <h2 class="section-heading">Experience &amp; education</h2>
+        <div class="experience-list">
+          {experience.map((item) => (
+            <div class="experience-row">
+              <span class="experience-period tabular">{item.period}</span>
+              <div class="experience-content">
+                <h3>{item.role}</h3>
+                <p class="experience-org">{item.org}</p>
+                <p class="experience-detail">{item.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="projects-cta">
+          <p class="projects-cta-text">Before software engineering, I spent years in hands-on fabrication — custom one-off sculpture. Some of that work is documented below.</p>
+          <a href="/projects" class="btn-primary">View fabrication projects →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Resume -->
+    <section class="contact" id="contact">
+      <div class="container contact-inner">
+        <h2>Let's talk.</h2>
+        <p class="contact-sub">Resume available below, or reach out directly.</p>
+        <div class="contact-actions">
+          <a class="btn-primary" href="/resume/resume-placeholder.pdf" download>
+            Download résumé
+          </a>
+          <a class="btn-secondary" href="mailto:you@example.com">
+            wsmarshall11@protonmail.com
+          </a>
+          <a class="btn-secondary" href="https://www.linkedin.com/in/wsmarshall11" target="_blank" rel="noopener">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="tabular">© {new Date().getFullYear()}</span>
+        <span>{NAME}</span>
+      </div>
+    </footer>
+
+    <script>
+      // Animate ledger values counting up when scrolled into view
+      function animateValue(el: Element, target: string) {
+        const isNumeric = /^\d+$/.test(target);
+        if (!isNumeric) {
+          el.textContent = target;
+          return;
+        }
+        const end = parseInt(target, 10);
+        const duration = 900;
+        const start = performance.now();
+        function tick(now: number) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.round(eased * end);
+          el.textContent = String(Math.round(eased * end));
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            const v = e.target.querySelector('.ledger-value');
+            const t = v?.getAttribute('data-target');
+            if (v && t) animateValue(v, t);
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      document.querySelectorAll('.ledger-row').forEach((r) => obs.observe(r));
+      document.querySelectorAll('[data-reveal]').forEach((el, i) => {
+        (el as HTMLElement).style.animationDelay = `${i * 90}ms`;
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  .nav { position: sticky; top: 0; z-index: 10; background: rgba(14,18,24,0.85); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: var(--space-2) 0; }
+  .nav-mark { color: var(--slate-teal-bright); font-size: 0.8rem; font-family: var(--font-mono); }
+  .nav-links { display: flex; gap: var(--space-4); }
+  .nav-links a { text-decoration: none; font-size: 0.9rem; color: var(--paper-dim); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--paper); }
+
+  .hero { padding-top: var(--space-7); padding-bottom: var(--space-6); border-bottom: 1px solid var(--line); }
+  [data-reveal] { opacity: 0; animation: rise 0.7s ease forwards; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-name { font-family: var(--font-display); font-size: clamp(2.75rem, 7vw, 5rem); font-weight: 600; line-height: 1.05; margin-top: var(--space-2); letter-spacing: -0.01em; }
+  .hero-title { font-family: var(--font-mono); font-size: 1.1rem; color: var(--slate-teal-bright); margin-top: var(--space-2); }
+  .hero-tagline { font-family: var(--font-display); font-size: 1.4rem; color: var(--paper-dim); margin-top: var(--space-3); max-width: 32ch; font-style: italic; }
+
+  .ledger { padding: var(--space-5) 0; border-bottom: 1px solid var(--line); }
+  .ledger-row { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: baseline; gap: var(--space-2); padding: var(--space-2) 0; border-bottom: 1px solid var(--line); }
+  .ledger-row:first-child { border-top: 1px solid var(--line); }
+  .ledger-label { color: var(--paper-dim); font-size: 0.95rem; }
+  .ledger-value { font-size: 1.6rem; font-weight: 500; color: var(--slate-teal-bright); min-width: 3ch; text-align: right; }
+
+  .pivot { padding: var(--space-6) 0; border-bottom: 1px solid var(--line); }
+  .pivot-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: var(--space-5); }
+  .pivot-heading h2 { font-family: var(--font-display); font-size: 2rem; margin-top: var(--space-1); line-height: 1.2; }
+  .pivot-body p { color: var(--paper-dim); font-size: 1.05rem; margin-bottom: var(--space-3); max-width: 56ch; }
+  .pivot-body p:last-child { color: var(--paper); }
+
+  .experience { padding: var(--space-6) 0; border-bottom: 1px solid var(--line); }
+  .section-heading { font-family: var(--font-display); font-size: 2rem; margin-top: var(--space-1); margin-bottom: var(--space-4); }
+  .experience-row { display: grid; grid-template-columns: 160px 1fr; gap: var(--space-3); padding: var(--space-3) 0; border-top: 1px solid var(--line); }
+  .experience-row:last-of-type { border-bottom: 1px solid var(--line); }
+  .experience-period { color: var(--slate-teal-bright); font-size: 0.85rem; padding-top: 0.2rem; }
+  .experience-content h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
+  .experience-org { color: var(--paper-dim); font-family: var(--font-mono); font-size: 0.85rem; margin-top: 0.2rem; }
+  .experience-detail { margin-top: var(--space-1); color: var(--paper-dim); max-width: 60ch; }
+
+  .projects-cta { margin-top: var(--space-5); padding: var(--space-4); border: 1px solid var(--line); border-radius: 4px; background: var(--ink-raised); display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; }
+  .projects-cta-text { color: var(--paper-dim); max-width: 50ch; font-size: 0.95rem; }
+
+  .contact { padding: var(--space-6) 0; }
+  .contact-inner h2 { font-family: var(--font-display); font-size: 2.5rem; }
+  .contact-sub { color: var(--paper-dim); margin-top: var(--space-1); margin-bottom: var(--space-4); }
+  .contact-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+  .btn-primary, .btn-secondary { display: inline-flex; align-items: center; padding: 0.85rem 1.5rem; border-radius: 3px; font-size: 0.95rem; text-decoration: none; transition: all 0.2s ease; }
+  .btn-primary { background: var(--slate-teal-bright); color: var(--ink); font-weight: 600; }
+  .btn-primary:hover { background: var(--paper); }
+  .btn-secondary { border: 1px solid var(--line); color: var(--paper-dim); }
+  .btn-secondary:hover { border-color: var(--slate-teal-bright); color: var(--paper); }
+
+  .footer { border-top: 1px solid var(--line); padding: var(--space-3) 0; }
+  .footer .container { display: flex; justify-content: space-between; color: var(--paper-dim); font-size: 0.85rem; }
+
+  @media (max-width: 760px) {
+    .pivot-grid { grid-template-columns: 1fr; }
+    .experience-row { grid-template-columns: 1fr; gap: var(--space-1); }
+    .nav-links { gap: var(--space-2); }
+    .nav-links a { font-size: 0.8rem; }
+    .projects-cta { flex-direction: column; align-items: flex-start; }
+  }
+</style>

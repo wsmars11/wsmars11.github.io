@@ -1,0 +1,387 @@
+---
+import '../styles/global.css';
+
+// ─────────────────────────────────────────────
+// EDIT YOUR PROJECTS HERE
+// For each project:
+//   title       — name of the project
+//   category    — e.g. "Metal fabrication" | "Woodworking" | "Mixed"
+//   year        — when you built it
+//   description — 2-3 sentences about what it is / how you built it
+//   images      — filenames from public/projects/ (add your own photos there)
+//                 Format: { src: "filename.jpg", alt: "description of photo" }
+// ─────────────────────────────────────────────
+
+const projects = [
+  {
+    title: "Shiner Bock Ram Skull",
+    category: "Sculpture",
+    year: "2015",
+    description: "A ram skull built for Spoetzl Brewery with their flagship beer logo being a ram. The project was made for festivals in Texas pouring Shiner beer.",
+    images: [
+      { src: "/images/shiner_ram_01.jpg", alt: "Overview of project one" },
+      { src: "/images/shiner_ram_02.jpg", alt: "Detail shot" },
+      { src: "/images/shiner_ram_03.jpg", alt: "In progress" },
+    ],
+  },
+  {
+    title: "Catherine Luxury Apartments: Wood Screens",
+    category: "Woodworking",
+    year: "2016",
+    description: "These mahogany wood screens were built as walls for the lobby of the luxury high-rise apartments called The Catherine in Austin, Texas. We shaped every piece with panels to match and be hung our custom steel armature.",
+    images: [
+      { src: "images/catherine-full_02.jpg", alt: "Overview of project two" },
+      { src: "images/catherine-full.jpg", alt: "Detail shot" },
+      { src: "images/catherine_proc_3.jpg", alt: "In progress" },
+      { src: "images/catherine_proc_5.jpg", alt: "In progress" },
+    ],
+  },
+  {
+    title: "Johnson and Johnson Meeting Room",
+    category: "Fiberglass Structure",
+    year: "2017",
+    description: "This was an exterior shell built for a meeting room behind the lobby desk of the J&J labs in Houston, Texas. We shaped and painted the individual pieces in our shop. Then we brought them all to hang around the pre-built room to finish the seams in place and paint all the junctions in place.",
+    images: [
+      { src: "images/jj_ship_01.jpg", alt: "Overview of project three" },
+      { src: "images/jj_ship_02.jpg", alt: "Detail shot" },
+      { src: "images/jj_ship_03.jpg", alt: "In progress" },
+    ],
+  },
+  {
+    title: "Critters Playground",
+    category: "Metal Armature Sculptures",
+    year: "2016",
+    description: "These animals were sculpted and built around intricate armatures so they could be put in a playpark at a mall outside of Austin. The pieces had to be suitable for childplay while being prepared for the elements outside.",
+    images: [
+      { src: "images/critters_01.jpg", alt: "Overview of project four" },
+      { src: "images/critters_02.jpg", alt: "Detail shot" },
+      { src: "images/critters_proc_01.jpg", alt: "In progress" },
+      { src: "images/critters_proc_02.jpg", alt: "In progress" },
+      { src: "images/critters_proc_03.jpg", alt: "In progress" },
+    ],
+  },
+  {
+    title: "Ramen Tatsuya Lucky Cat",
+    category: "Woodworking",
+    year: "2018",
+    description: "This is one of a series of lucky cats that we built for the entryway to the renowned Ramen Tatsuya restaurant.",
+    images: [
+      { src: "images/lucky_cat_01.jpg", alt: "Overview of project five" },
+      { src: "images/lucky_cat_02.jpg", alt: "Detail shot" },
+      { src: "images/lucky_cat_03.jpg", alt: "In progress" },
+    ],
+  },
+  {
+    title: "Nessie Sculpture: Thinkery Austin",
+    category: "GFRC sculpture with mossaic tiling",
+    year: "2018",
+    description: "This Loch Ness Monster was sculpted for outside of the childrens museum, the Thinkery, in Austin. We shaped the swimming figure and added a base of custom GFRC that stuck to the substrate leaving the surface ready for tile. A womens group flew in from New York to tile the figure before we installed it in the park.",
+    images: [
+      { src: "images/nessy_01.jpg", alt: "Overview of project six" },
+      { src: "images/nessy_02.jpg", alt: "Detail shot" },
+      { src: "images/nessy_proc_01.jpg", alt: "In progress" },
+      { src: "images/nessy_proc_02.jpg", alt: "In progress" },
+      { src: "images/nessy_proc_03.jpg", alt: "In progress" },
+      { src: "images/nessy_proc_04.jpg", alt: "In progress" },
+      { src: "images/nessy_proc_05.jpg", alt: "In progress" },
+      { src: "images/nessy_proc_06.jpg", alt: "In progress" },
+      { src: "images/nessy_proc_07.jpg", alt: "In progress" },
+      { src: "images/nessy_proc_08.jpg", alt: "In progress" },
+    ],
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fabrication Projects — William Marshall</title>
+    <meta name="description" content="Custom fabrication projects in metal and wood." />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="container nav-inner">
+        <a href="/" class="nav-back">← Back</a>
+        <nav class="nav-links">
+          <a href="/#pivot">Why Finance</a>
+          <a href="/#experience">Experience</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Before Software</p>
+        <h1>Fabrication Projects</h1>
+        <p class="page-sub">Metal and wood work from the shop. Click any photo to expand.</p>
+      </div>
+    </section>
+
+    <main class="projects-main">
+      <div class="container">
+        {projects.map((project, pi) => (
+          <article class="project" id={`project-${pi}`}>
+            <div class="project-header">
+              <div>
+                <h2 class="project-title">{project.title}</h2>
+                <p class="project-meta">
+                  <span class="tabular">{project.year}</span>
+                  <span class="meta-sep">·</span>
+                  <span>{project.category}</span>
+                </p>
+              </div>
+            </div>
+            <p class="project-description">{project.description}</p>
+            <div class="photo-grid" data-project={pi}>
+              {project.images.map((img, ii) => (
+                <button
+                  class="photo-thumb"
+                  data-project={pi}
+                  data-index={ii}
+                  aria-label={`View ${img.alt}`}
+                >
+                  <img
+                    src={`/projects/${img.src}`}
+                    alt={img.alt}
+                    loading="lazy"
+                    onerror="this.parentElement.classList.add('placeholder')"
+                  />
+                  <span class="thumb-overlay" aria-hidden="true">⤢</span>
+                </button>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lb-backdrop" id="lb-backdrop"></div>
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <button class="lb-close" id="lb-close" aria-label="Close">✕</button>
+      <div class="lb-img-wrap">
+        <img class="lb-img" id="lb-img" src="" alt="" />
+      </div>
+      <p class="lb-caption" id="lb-caption"></p>
+      <p class="lb-counter" id="lb-counter"></p>
+      <button class="lb-prev" id="lb-prev" aria-label="Previous photo">‹</button>
+      <button class="lb-next" id="lb-next" aria-label="Next photo">›</button>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="tabular">© {new Date().getFullYear()}</span>
+        <a href="/" style="color: var(--paper-dim); text-decoration: none;">William Marshall</a>
+      </div>
+    </footer>
+
+    <script>
+      // Build an index of all projects and their images from the DOM
+      const allProjects: { src: string; alt: string }[][] = [];
+      document.querySelectorAll('.photo-grid').forEach((grid) => {
+        const pi = Number((grid as HTMLElement).dataset.project);
+        allProjects[pi] = [];
+        grid.querySelectorAll('img').forEach((img) => {
+          allProjects[pi].push({ src: img.src, alt: img.alt });
+        });
+      });
+
+      let currentProject = 0;
+      let currentIndex = 0;
+
+      const lightbox = document.getElementById('lightbox')!;
+      const backdrop = document.getElementById('lb-backdrop')!;
+      const lbImg = document.getElementById('lb-img') as HTMLImageElement;
+      const lbCaption = document.getElementById('lb-caption')!;
+      const lbCounter = document.getElementById('lb-counter')!;
+
+      function openLightbox(project: number, index: number) {
+        currentProject = project;
+        currentIndex = index;
+        updateLightbox();
+        lightbox.classList.add('is-open');
+        backdrop.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        document.getElementById('lb-close')!.focus();
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        backdrop.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      function updateLightbox() {
+        const imgs = allProjects[currentProject];
+        const img = imgs[currentIndex];
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lbCaption.textContent = img.alt;
+        lbCounter.textContent = `${currentIndex + 1} / ${imgs.length}`;
+        const prevBtn = document.getElementById('lb-prev')!;
+        const nextBtn = document.getElementById('lb-next')!;
+        prevBtn.style.visibility = currentIndex === 0 ? 'hidden' : 'visible';
+        nextBtn.style.visibility = currentIndex === imgs.length - 1 ? 'hidden' : 'visible';
+      }
+
+      document.querySelectorAll('.photo-thumb').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const pi = Number((btn as HTMLElement).dataset.project);
+          const ii = Number((btn as HTMLElement).dataset.index);
+          openLightbox(pi, ii);
+        });
+      });
+
+      document.getElementById('lb-close')!.addEventListener('click', closeLightbox);
+      document.getElementById('lb-backdrop')!.addEventListener('click', closeLightbox);
+
+      document.getElementById('lb-prev')!.addEventListener('click', () => {
+        if (currentIndex > 0) { currentIndex--; updateLightbox(); }
+      });
+      document.getElementById('lb-next')!.addEventListener('click', () => {
+        if (currentIndex < allProjects[currentProject].length - 1) { currentIndex++; updateLightbox(); }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('is-open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft' && currentIndex > 0) { currentIndex--; updateLightbox(); }
+        if (e.key === 'ArrowRight' && currentIndex < allProjects[currentProject].length - 1) { currentIndex++; updateLightbox(); }
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  .nav { position: sticky; top: 0; z-index: 10; background: rgba(14,18,24,0.85); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: var(--space-2) 0; }
+  .nav-back { text-decoration: none; font-size: 0.9rem; color: var(--slate-teal-bright); font-family: var(--font-mono); transition: color 0.2s; }
+  .nav-back:hover { color: var(--paper); }
+  .nav-links { display: flex; gap: var(--space-4); }
+  .nav-links a { text-decoration: none; font-size: 0.9rem; color: var(--paper-dim); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--paper); }
+
+  .page-hero { padding: var(--space-6) 0 var(--space-4); border-bottom: 1px solid var(--line); }
+  .page-hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 600; margin-top: var(--space-2); }
+  .page-sub { color: var(--paper-dim); margin-top: var(--space-2); font-size: 1.05rem; }
+
+  .projects-main { padding: var(--space-5) 0 var(--space-6); }
+
+  .project { padding: var(--space-5) 0; border-bottom: 1px solid var(--line); }
+  .project:first-child { padding-top: 0; }
+  .project:last-child { border-bottom: none; }
+
+  .project-header { margin-bottom: var(--space-2); }
+  .project-title { font-family: var(--font-display); font-size: 1.75rem; font-weight: 600; }
+  .project-meta { font-size: 0.85rem; color: var(--slate-teal-bright); margin-top: 0.3rem; font-family: var(--font-mono); }
+  .meta-sep { margin: 0 0.5rem; color: var(--line); }
+  .project-description { color: var(--paper-dim); max-width: 64ch; line-height: 1.7; margin-bottom: var(--space-4); }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+  }
+
+  .photo-thumb {
+    position: relative;
+    aspect-ratio: 4/3;
+    background: var(--ink-raised);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 0;
+    transition: border-color 0.2s;
+  }
+  .photo-thumb:hover { border-color: var(--slate-teal-bright); }
+  .photo-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .photo-thumb:hover img { transform: scale(1.04); }
+  .thumb-overlay {
+    position: absolute; top: 8px; right: 10px;
+    font-size: 1.1rem; color: var(--paper);
+    opacity: 0; transition: opacity 0.2s;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  }
+  .photo-thumb:hover .thumb-overlay { opacity: 1; }
+
+  /* Placeholder state when image 404s */
+  .photo-thumb.placeholder { background: var(--ink-raised); }
+  .photo-thumb.placeholder img { opacity: 0.15; }
+  .photo-thumb.placeholder::after {
+    content: 'Add photo';
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono); font-size: 0.75rem;
+    color: var(--paper-dim); letter-spacing: 0.05em;
+  }
+
+  /* Lightbox — hidden by default, shown when .is-open is added by JS */
+  .lb-backdrop {
+    display: none;
+    position: fixed; inset: 0; z-index: 100;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(4px);
+  }
+  .lb-backdrop.is-open { display: block; }
+
+  .lightbox {
+    display: none;
+    position: fixed; inset: 0; z-index: 101;
+    flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: var(--space-4);
+  }
+  .lightbox.is-open { display: flex; }
+
+  .lb-img-wrap {
+    max-width: min(90vw, 960px);
+    max-height: 75vh;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .lb-img {
+    max-width: 100%; max-height: 75vh;
+    object-fit: contain; border-radius: 3px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  }
+  .lb-caption { color: var(--paper-dim); font-size: 0.9rem; margin-top: var(--space-2); text-align: center; }
+  .lb-counter { font-family: var(--font-mono); font-size: 0.8rem; color: var(--slate-teal-bright); margin-top: 0.4rem; }
+
+  .lb-close {
+    position: absolute; top: var(--space-3); right: var(--space-3);
+    background: rgba(14,18,24,0.7); border: 1px solid var(--line); color: var(--paper);
+    width: 40px; height: 40px; border-radius: 50%; cursor: pointer;
+    font-size: 1rem; display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s;
+  }
+  .lb-close:hover { border-color: var(--slate-teal-bright); }
+
+  .lb-prev, .lb-next {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(14,18,24,0.7); border: 1px solid var(--line); color: var(--paper);
+    width: 44px; height: 44px; border-radius: 50%; cursor: pointer;
+    font-size: 1.5rem; display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s;
+  }
+  .lb-prev { left: var(--space-3); }
+  .lb-next { right: var(--space-3); }
+  .lb-prev:hover, .lb-next:hover { border-color: var(--slate-teal-bright); }
+
+  .footer { border-top: 1px solid var(--line); padding: var(--space-3) 0; }
+  .footer .container { display: flex; justify-content: space-between; color: var(--paper-dim); font-size: 0.85rem; }
+
+  @media (max-width: 600px) {
+    .photo-grid { grid-template-columns: repeat(2, 1fr); }
+    .nav-links { gap: var(--space-2); }
+    .nav-links a { font-size: 0.8rem; }
+    .lb-prev { left: 8px; }
+    .lb-next { right: 8px; }
+  }
+</style>
